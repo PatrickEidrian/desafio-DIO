@@ -130,7 +130,7 @@ a:hover {
     border-radius: 50%;
     box-shadow: 0px 0px 0px 0px #fff;
     z-index: -1;
-    transition: 200ms ease-in-out 0;
+    transition: 500ms ease-in-out 0s;
 }
 
 .menu-items {
@@ -145,14 +145,14 @@ a:hover {
     z-index: 2;
     opacity: 0;
     visibility: hidden;
-    transition: 400ms ease-in-out 0;
+    transition: 500ms ease-in-out 0s;
 }
 
 .menu-items a {
     list-style-type: none;
 }
 
-.menu-items ul li {
+.menu-items ul li a {
     margin: 10px 0;
     color: black;
     text-decoration: none;
@@ -181,4 +181,18 @@ a:hover {
     transform: rotate(-45deg);
     background-color: #696bc9;
     top: 47px;
+}
+
+#toggle:checked+.checkbox {
+    background-color: aliceblue;
+}
+
+#toggle:checked~.menu {
+    box-shadow: 0px 0px 0px 100vmax whitesmoke;
+    z-index: 1;
+}
+
+#toggle:checked~.menu-items {
+    visibility: visible;
+    opacity: 1;
 }

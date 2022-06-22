@@ -1,19 +1,28 @@
-let currentNumberWrapper = document.getElementById("currentNumber");
-let currentNumber = 0;
-
-function increment() {
-    currentNumber += 1;
-    currentNumberWrapper.innerHTML = currentNumber;
-}
+const botaoMais = document.getElementById("mais")
+const botaoMenos = document.getElementById("menos")
+let contador = document.getElementById("currentNumber")
+let currentNumber = 0
 
 
-function decrement() {
-    currentNumber -= 1;
-    currentNumberWrapper.innerHTML = currentNumber;
-}
 
-let botaoMenos = document.getElementsByName("subtrair");
-let botaoMais = document.getElementsByName("adicionar");
+botaoMais.addEventListener("click", () => {
+    currentNumber += 1
+    contador.innerHTML = currentNumber
+    if (currentNumber > 0) {
+        contador.style.color = "green"
+    } else
+    if (currentNumber == 0) {
+        contador.style.color = 'black'
+    }
+});
 
-botaoMenos.addEventListener("click", increment);
-botaoMais.addEventListener("click", decrement);
+botaoMenos.addEventListener("click", () => {
+    currentNumber -= 1
+    contador.innerHTML = currentNumber
+    if (currentNumber < 0) {
+        contador.style.color = 'red'
+    } else
+    if (currentNumber == 0) {
+        contador.style.color = 'black'
+    }
+});
